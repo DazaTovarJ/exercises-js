@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 3 (Cadenas)</title>
+	</head>
+	<body>
+		<h1>Ejercicio 3 (Cadenas)</h1>
+		<p><a href="strings.html">Volver atrás</a></p>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<script>
+			/*
+				Do a function that returns a substring based on the number of indicated characters. Ex. myFunction("Hello World", 5) returns "Hello"
+			*/
+			// This exercise will be about dates
+
+			const splitText = (text = "", separator = undefined) =>
+				!text ? [] : length === undefined ? [] : text.split(separator);
+			let dateString = prompt("Ingresa una fecha (AAAA-MM-DD)");
+			let separator = "-";
+			const dateParts = splitText(dateString, separator);
+
+			if (dateParts.length > 0 && dateParts.length <= 3) {
+				alert(`La fecha es del año ${dateParts[0]}`);
+			} else {
+				alert("El formato no es válido");
+			}
+		</script>
+	</body>
+</html>

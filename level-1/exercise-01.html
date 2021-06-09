@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 1 (Cadenas)</title>
+	</head>
+	<body>
+		<h1>Ejercicio 1 (Cadenas)</h1>
+		<p><a href="strings.html">Volver atrás</a></p>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<script>
+			/*
+				Do a function that counts the length of a string. Ex. myFunction("Hello World") returns 10
+			*/
+			const countChar = (text = "") => (!text ? -1 : text.length);
+			let stringToCount = prompt("Ingresa un texto:");
+			let stringLength = countChar(stringToCount);
+
+			if (stringLength != -1) {
+				alert(`El texto ingresado tiene ${stringLength} caracteres`);
+			} else {
+				alert("El texto ingresado no es válido");
+			}
+		</script>
+	</body>
+</html>

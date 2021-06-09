@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 5</title>
+	</head>
+	<body>
+		<h1>Ejercicio 5</h1>
+		<p><a href="strings.html">Volver atrás</a></p>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<script>
+			// Invert a string
+			let text = prompt("Ingresa un texto");
+
+			const inverseString = (text = "") => {
+				if (!text) {
+					return "";
+				}
+				let inverse = "";
+				for (let i = text.length - 1; i >= 0; i--) {
+					inverse += text.charAt(i);
+				}
+				return inverse;
+			};
+
+			let inverseText = inverseString(text);
+			if (inverseText === "") {
+				alert("Por favor, ingresa un texto");
+			} else {
+				alert(`El texto invertido es ${inverseText}`);
+			}
+		</script>
+	</body>
+</html>

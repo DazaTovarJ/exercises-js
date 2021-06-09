@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 6</title>
+	</head>
+	<body>
+		<h1>Ejercicio 6</h1>
+		<p><a href="strings.html">Volver atrás</a></p>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<script>
+			// Count how many times a word is repeated in a text
+			const countWord = (text = "", word = "") => {
+				if (!text || !word) {
+					return -1;
+				}
+				let counter = 0;
+				const wordList = text.split(" ");
+				for (let i = 0; i < wordList.length; i++) {
+					if (wordList[i] === word) {
+						counter++;
+					}
+				}
+				return counter;
+			};
+			let text = prompt("Ingresa un texto");
+			let word = prompt("Ingresa una palabra del texto para ser buscada");
+			let repetitions = countWord(text, word);
+			if (repetitions > 0) {
+				alert(
+					`La palabra ${word} se repite ${repetitions} veces en el texto.`,
+				);
+			} else if (repetitions === 0) {
+				alert(`La palabra ${word} no está en el texto`);
+			} else {
+				alert(
+					"No se ha ingresado ningún texto o ninguna palabra se ha ingresado",
+				);
+			}
+		</script>
+	</body>
+</html>

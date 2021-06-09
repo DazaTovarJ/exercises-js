@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 2 (Cadenas)</title>
+	</head>
+	<body>
+		<h1>Ejercicio 2 (Cadenas)</h1>
+		<p><a href="strings.html">Volver atrás</a></p>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<script>
+			/*
+				Do a function that returns a substring based on the number of indicated characters. Ex. myFunction("Hello World", 5) returns "Hello"
+			*/
+			const subtext = (text = "", length = undefined) =>
+				!text ? "" : length === undefined ? "" : text.slice(0, length);
+			let stringToCut = prompt("Ingresa un texto:");
+			let characters = parseInt(
+				prompt("Ingresa el número de caracteres que quieres obtener"),
+			);
+			let substring = subtext(stringToCut, characters);
+
+			if (substring !== "") {
+				alert(`El texto obtenido es ${substring}`);
+			} else {
+				alert("El resultado no es válido");
+			}
+		</script>
+	</body>
+</html>

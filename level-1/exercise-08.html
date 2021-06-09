@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 7</title>
+	</head>
+	<body>
+		<h1>Ejercicio 7</h1>
+		<p><a href="strings.html">Volver atrás</a></p>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<script>
+			// Eliminates certain pattern from a given text
+			let text = prompt("Ingresa un texto"),
+				pattern = prompt("Ingresa la porción que deseas eliminar");
+
+			const eliminatePattern = (text = "", pattern = undefined) => {
+				return text.replace(pattern, "");
+			};
+		</script>
+	</body>
+</html>

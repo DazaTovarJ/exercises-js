@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 4 (Cadenas)</title>
+	</head>
+	<body>
+		<h1>Ejercicio 4 (Cadenas)</h1>
+		<p><a href="strings.html">Volver atrás</a></p>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<script>
+			/*
+				Do a function that repeats a text n times. Ex, myFunction("Hello World", 3) returns "Hello World Hello World Hello World"
+			*/
+			const repeatText = (text = "", times = undefined) => {
+				if (!text) return "";
+				if (times === undefined) return "";
+				if (times <= 0) return "";
+				let repeatedText = "";
+
+				for (let i = 1; i <= times; i++) {
+					repeatedText += `${text} `;
+				}
+				return repeatedText;
+			};
+			let text = prompt("Ingresa un texto:");
+			let repetitions = parseInt(
+				prompt("¿Cuántas veces quieres repetir el texto?"),
+			);
+			let repeatedText = repeatText(text, repetitions);
+
+			if (repeatedText !== "" || times !== undefined || times > 0) {
+				alert(`El texto repetido es ${repeatedText}`);
+			} else {
+				alert("El texto no es válido");
+			}
+		</script>
+	</body>
+</html>
