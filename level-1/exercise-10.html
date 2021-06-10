@@ -10,5 +10,30 @@
 		<h1>Ejercicio 10</h1>
 		<p><a href="../index.html">Volver al inicio</a></p>
 		<p><a href="numbers.html">Volver atrás</a></p>
+		<script>
+			/**
+			 * Check if a number is palindromic (is read the same way back and forth)
+			 */
+			let number = prompt("Ingresa un número");
+
+			const isPalindromicNumber = (number = undefined) => {
+				if (!number || isNaN(number)) {
+					return false;
+				}
+				let inverse = Number.parseInt(
+					number.split("").reverse().join(""),
+				);
+				number = Number.parseInt(number);
+				return number === inverse;
+			};
+
+			let palindrome = isPalindromicNumber(number);
+
+			palindrome
+				? alert(`El númmero ${number} es capicúa`)
+				: number && !isNaN(number)
+				? alert(`El número ${number} no es capicúa`)
+				: alert(`No se ingresó un número o no es válido`);
+		</script>
 	</body>
 </html>
