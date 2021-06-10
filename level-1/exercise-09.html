@@ -10,5 +10,15 @@
 		<h1>Ejercicio 9</h1>
 		<p><a href="../index.html">Volver al inicio</a></p>
 		<p><a href="numbers.html">Volver atrás</a></p>
+		<script>
+			/**
+			 * returns a random number between  and 600
+			 */
+			const randomNumber = () => Math.random() * (600 - 501) + 501;
+
+			confirm("¿Deseas obtener un número aleatorio entre 501 y 600")
+				? alert(`El número es ${randomNumber()}`)
+				: alert("La acción ha sido rechazada");
+		</script>
 	</body>
 </html>
