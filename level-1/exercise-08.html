@@ -18,6 +18,10 @@
 			const eliminatePattern = (text = "", pattern = undefined) => {
 				return text.replace(pattern, "");
 			};
+
+			let modifiedText = eliminatePattern(text, pattern);
+
+			alert(`El texto modificado es: ${modifiedText}`);
 		</script>
 	</body>
 </html>
