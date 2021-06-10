@@ -15,13 +15,18 @@
 			let text = prompt("Ingresa un texto"),
 				pattern = prompt("Ingresa la porción que deseas eliminar");
 
-			const eliminatePattern = (text = "", pattern = undefined) => {
-				return text.replace(pattern, "");
-			};
+			const eliminatePattern = (text = "", pattern = undefined) =>
+				!text || !pattern
+					? ""
+					: text.replace(new RegExp(pattern, "ig"), "");
 
 			let modifiedText = eliminatePattern(text, pattern);
 
-			alert(`El texto modificado es: ${modifiedText}`);
+			modifiedText !== ""
+				? alert(`El texto modificado es: ${modifiedText}`)
+				: alert(
+						"No se pudieron eliminar los caracteres, no se ingresó texto o no se ingresaron caracteres a eliminar",
+				  );
 		</script>
 	</body>
 </html>

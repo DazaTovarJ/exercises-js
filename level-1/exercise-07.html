@@ -19,10 +19,7 @@
 					return false;
 				}
 				text = text.toLowerCase();
-				let inverseWord = "";
-				for (let i = text.length - 1; i >= 0; i--) {
-					inverseWord += text.charAt(i);
-				}
+				let inverseWord = text.split("").reverse().join("");
 				return inverseWord === text;
 			};
 

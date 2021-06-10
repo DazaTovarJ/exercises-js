@@ -14,23 +14,14 @@
 			// Invert a string
 			let text = prompt("Ingresa un texto");
 
-			const inverseString = (text = "") => {
-				if (!text) {
-					return "";
-				}
-				let inverse = "";
-				for (let i = text.length - 1; i >= 0; i--) {
-					inverse += text.charAt(i);
-				}
-				return inverse;
-			};
+			const inverseString = (text = "") =>
+				!text ? "" : text.split("").reverse().join("");
 
 			let inverseText = inverseString(text);
-			if (inverseText === "") {
-				alert("Por favor, ingresa un texto");
-			} else {
-				alert(`El texto invertido es ${inverseText}`);
-			}
+
+			inverseText === ""
+				? alert("Por favor, ingresa un texto")
+				: alert(`El texto invertido es ${inverseText}`);
 		</script>
 	</body>
 </html>
