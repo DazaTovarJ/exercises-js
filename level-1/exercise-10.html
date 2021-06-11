@@ -14,7 +14,6 @@
 			/**
 			 * Check if a number is palindromic (is read the same way back and forth)
 			 */
-			let number = prompt("Ingresa un número");
 
 			const isPalindromicNumber = (number = undefined) => {
 				if (!number || isNaN(number)) {
@@ -27,6 +26,7 @@
 				return number === inverse;
 			};
 
+			let number = prompt("Ingresa un número");
 			let palindrome = isPalindromicNumber(number);
 
 			palindrome
