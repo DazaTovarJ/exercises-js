@@ -10,5 +10,25 @@
 		<h1>Ejercicio 11</h1>
 		<p><a href="../index.html">Volver al inicio</a></p>
 		<p><a href="numbers.html">Volver atrás</a></p>
+		<script>
+			/**
+			 * Calculates the factorial of a given number
+			 */
+			const getFactorial = (number = 0) =>
+				!number || isNaN(number) || number < 0
+					? 0
+					: number <= 1
+					? 1
+					: number * getFactorial(number - 1);
+
+			let number = Number.parseInt(prompt("Ingresa un número"));
+			let factorial = getFactorial(number);
+
+			factorial === 0
+				? alert(
+						"Se insertó un número no válido o no se insertó ningún número",
+				  )
+				: alert(`El factorial de ${number} es ${factorial}`);
+		</script>
 	</body>
 </html>
