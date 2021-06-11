@@ -14,8 +14,8 @@
 			/**
 			 * Calculates the factorial of a given number
 			 */
-			const getFactorial = (number = 0) =>
-				!number || isNaN(number) || number < 0
+			const getFactorial = (number = undefined) =>
+				number === undefined || isNaN(number) || number < 0
 					? 0
 					: number <= 1
 					? 1
