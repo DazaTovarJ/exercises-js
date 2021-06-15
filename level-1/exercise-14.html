@@ -14,6 +14,43 @@
 			/**
 			 * Convert temperature between Celsius and Fahrenheit degrees and viceversa
 			 */
+			const convertTemperature = (
+				degrees = undefined,
+				unit = undefined,
+			) => {
+				if (isNaN(degrees) || !unit) return null;
+				unit = unit.toUpperCase();
+				return unit === "CELSIUS" ||
+					unit === "CENTÍGRADOS" ||
+					unit === "C"
+					? degrees * (9 / 5) + 32
+					: unit === "FAHRENHEIT" || unit === "F"
+					? (degrees - 32) * (5 / 9)
+					: null;
+			};
+
+			let degrees = Number.parseFloat(
+				prompt("Ingresa la temperatura que deseas convertir"),
+			);
+			let unit = prompt(
+				"¿En qué unidad está la temperatura?\nSi es Celsius (o Centígrados), se convertirá a Fahrenheit, en caso contrario, se convertirá a Celsius (Centígrados)",
+			);
+
+			let convertedTemperature = convertTemperature(degrees, unit);
+
+			unit = unit.toUpperCase();
+
+			unit === "C" || unit === "CELSIUS" || unit === "CENTÍGRADOS"
+				? alert(
+						`${degrees} °C es equivalente a ${convertedTemperature} °F`,
+				  )
+				: unit === "F" || unit === "FAHRENHEIT"
+				? alert(
+						`${degrees} °F es equivalente a ${convertedTemperature} °C`,
+				  )
+				: alert(
+						"No se ha ingresado una temperatura válida en una escala reconocida (Celsius o Fahrenheit)",
+				  );
 		</script>
 	</body>
 </html>

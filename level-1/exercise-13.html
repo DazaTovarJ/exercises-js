@@ -14,6 +14,16 @@
 			/**
 			 * Check if a number is even or odd
 			 */
+			const isEven = (number) => (isNaN(number) ? 0 : number % 2 === 0);
+
+			let number = Number.parseInt(prompt("Ingresa un número"));
+			let evenOdd = isEven(number);
+
+			evenOdd
+				? alert(`El número ${number} es par`)
+				: evenOdd !== 0
+				? alert(`El número ${number} es impar`)
+				: alert("No se ingresó un número");
 		</script>
 	</body>
 </html>
