@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 17</title>
+	</head>
+	<body>
+		<h1>Ejercicio 17</h1>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<p><a href="numbers.html">Volver atrás</a></p>
+		<script>
+			/**
+			 * Determines how many years had elapsed from a given date to this day
+			 */
+			const calculateYears = (date = undefined) => {
+				if (date === undefined || !(date instanceof Date)) return null;
+
+				let difference = new Date().getTime() - date.getTime(),
+					yearsInms = 1000 * 60 * 60 * 24 * 365;
+
+				return Math.floor(difference / yearsInms);
+			};
+
+			alert(
+				"A continuación se pedirá una fecha. Deberá ingresar los datos en el orden en que aparecerán:",
+			);
+			const months = [
+				"enero",
+				"febrero",
+				"marzo",
+				"abril",
+				"mayo",
+				"junio",
+				"julio",
+				"agosto",
+				"septiembre",
+				"octubre",
+				"noviembre",
+				"diciembre",
+			];
+
+			let year = Number.parseInt(prompt("Ingrese un año")),
+				month = prompt("Ingrese un mes"),
+				day = Number.parseInt(prompt("Ingrese un día"));
+
+			month = month.toLowerCase();
+			const date = new Date(year, months.indexOf(month), day);
+			let years = calculateYears(date);
+
+			if (years !== null && months.indexOf(month) !== -1) {
+				if (years < 0)
+					alert(
+						`Faltan ${Math.abs(
+							years,
+						)} años desde hoy hasta el ${date.getFullYear()}`,
+					);
+				else if (years > 0)
+					alert(
+						`Han pasado ${years} años desde el ${date.getFullYear()} hasta hoy`,
+					);
+				else
+					alert(
+						`La fecha actual y la fecha dada corresponden al mismo año`,
+					);
+			} else {
+				alert("No se ha ingresado una fecha válida");
+			}
+		</script>
+	</body>
+</html>

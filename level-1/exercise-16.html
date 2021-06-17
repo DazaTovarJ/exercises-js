@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 16</title>
+	</head>
+	<body>
+		<h1>Ejercicio 16</h1>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<p><a href="numbers.html">Volver atrás</a></p>
+		<script>
+			/**
+			 * Calculates the final amount after applying a discount to a given quantity
+			 */
+			const calculateWithDiscount = (
+				subtotal = undefined,
+				discount = 0,
+			) =>
+				subtotal === undefined ||
+				subtotal <= 0 ||
+				discount < 0 ||
+				isNaN(subtotal) ||
+				isNaN(discount)
+					? null
+					: subtotal - subtotal * (discount / 100);
+
+			let subtotal = Number.parseFloat(
+				prompt("Ingresa el subtotal a ser descontado"),
+			);
+			let discount = Number.parseFloat(
+				prompt(
+					"Ingresa el porcentaje de descuento (0 = sin descuento)",
+				),
+			);
+
+			let total = calculateWithDiscount(subtotal, discount);
+
+			total !== null
+				? alert(
+						`Con un ${discount}% de descuento, el total es $${total}`,
+				  )
+				: alert("No se ingresó un monto o descuento válido");
+		</script>
+	</body>
+</html>
