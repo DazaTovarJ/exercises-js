@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 19</title>
+	</head>
+	<body>
+		<h1>Ejercicio 19</h1>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<p><a href="regex.html">Volver atrás</a></p>
+		<script>
+			/**
+			 * Validates if a name is valid
+			 */
+			const isValidName = (name = "") => {
+				if (!name || typeof name !== "string") return false;
+
+				let nameRegEx = /^[a-záéíñóúü\s]+$/gi;
+
+				return nameRegEx.test(name);
+			};
+
+			let fullName = prompt("Ingrese su nombre");
+
+			if (isValidName(fullName)) {
+				alert(`El nombre ${fullName} es valido`);
+			} else if (fullName && typeof fullName === "string") {
+				alert(`El nombre ${fullName} no es válido`);
+			} else {
+				alert(
+					"No se ha ingresado ningún nombre o se ingresó algo que no es un texto",
+				);
+			}
+		</script>
+	</body>
+</html>

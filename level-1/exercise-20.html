@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 20</title>
+	</head>
+	<body>
+		<h1>Ejercicio 20</h1>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<p><a href="regex.html">Volver atrás</a></p>
+		<script>
+			/**
+			 * Validates if an email is valid
+			 */
+			const isValidEmail = (email = "") => {
+				if (!email || typeof email !== "string") return false;
+
+				let nameRegEx =
+					/[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i;
+
+				return nameRegEx.test(email);
+			};
+
+			let email = prompt("Ingrese su correo");
+
+			if (isValidEmail(email)) {
+				alert(`El correo ${email} es valido`);
+			} else if (email && typeof email === "string") {
+				alert(`El correo ${email} no es válido`);
+			} else {
+				alert(
+					"No se ha ingresado ningún correo o se ingresó algo que no es un texto",
+				);
+			}
+		</script>
+	</body>
+</html>

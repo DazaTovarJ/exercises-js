@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 18</title>
+	</head>
+	<body>
+		<h1>Ejercicio 18</h1>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<p><a href="regex.html">Volver atrás</a></p>
+		<script>
+			/**
+			 * Counts the number of vowels and consonants in a given string
+			 */
+			const countLetters = (text = "") => {
+				if (!text || typeof text !== "string") return {};
+
+				let vowels = 0,
+					consonants = 0;
+
+				for (const letter of text) {
+					if (/[aeiouáéíóúü]/i.test(letter)) vowels++;
+
+					if (/[b-df-hj-np-tv-zñ]/i.test(letter)) consonants++;
+				}
+
+				return { text, vowels, consonants };
+			};
+
+			let text = prompt("Ingresa un texto");
+			const textInfo = countLetters(text);
+
+			if (!text) {
+				alert("No se ha ingresado ningún texto");
+			} else {
+				alert(
+					`El texto ${text} tiene ${textInfo.vowels} vocales y ${textInfo.consonants} consonantes`,
+				);
+			}
+		</script>
+	</body>
+</html>
