@@ -9,11 +9,55 @@
 	<body>
 		<h1>Ejercicio 22</h1>
 		<p><a href="../index.html">Volver al inicio</a></p>
-		<p><a href="regex.html">Volver atrás</a></p>
+		<p><a href="arrays.html">Volver atrás</a></p>
 		<script>
 			/**
 			 * Returns the highest and lowest value of a numeric array
 			 */
+			const getLowHighValues = (array = []) => {
+				if (!array || array.length === 0) {
+					return [];
+				}
+
+				let maximum = 0,
+					minimum = 9999;
+
+				for (let i = 0; i < array.length; i++) {
+					const current = array[i];
+					if (current > maximum) {
+						maximum = current;
+					} else if (current < minimum) {
+						minimum = current;
+					}
+				}
+
+				return [minimum, maximum];
+			};
+
+			let members = Number.parseInt(
+				prompt("¿Cuántos números deseas ingresar?"),
+			);
+			if (!isNaN(members) && members > 0) {
+				const array = new Array(members);
+				for (let i = 0; i < members; i++) {
+					array[i] = Number.parseInt(
+						prompt(`Ingresa el ${i + 1}° número`),
+					);
+				}
+
+				let lowHighValues = getLowHighValues(array);
+
+				if (lowHighValues.length > 0) {
+					let [minimum, maximum] = lowHighValues;
+					alert(
+						`El mínimo valor es ${minimum} y el máximo valor es ${maximum}`,
+					);
+				}
+			} else {
+				alert(
+					"No se ha ingresado un array o un número válido de miembros",
+				);
+			}
 		</script>
 	</body>
 </html>

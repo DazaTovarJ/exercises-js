@@ -9,11 +9,48 @@
 	<body>
 		<h1>Ejercicio 21</h1>
 		<p><a href="../index.html">Volver al inicio</a></p>
-		<p><a href="regex.html">Volver atrás</a></p>
+		<p><a href="arrays.html">Volver atrás</a></p>
 		<script>
 			/**
 			 * Returns an array where its members are the same numbers of a given array, elevated by the power of two
 			 */
+			const elevateMembers = (array = []) => {
+				if (!array || array.length === 0) {
+					return [];
+				}
+
+				const newArray = new Array(array.length);
+
+				for (let i = 0; i < array.length; i++) {
+					newArray[i] = Math.pow(array[i], 2);
+				}
+
+				return newArray;
+			};
+
+			let members = Number.parseInt(
+				prompt("¿Cuántos números deseas elevar al cuadrado?"),
+			);
+			if (!isNaN(members) && members > 0) {
+				const array = new Array(members);
+				for (let i = 0; i < members; i++) {
+					array[i] = Number.parseInt(
+						prompt(`Ingresa el ${i + 1}° número`),
+					);
+				}
+
+				let poweredArray = elevateMembers(array);
+
+				if (poweredArray.length > 0) {
+					alert(
+						`${array.toLocaleString()} elevados al cuadrado son ${poweredArray.toLocaleString()} respectivamente`,
+					);
+				}
+			} else {
+				alert(
+					"No se ha ingresado un array o un número válido de miembros",
+				);
+			}
 		</script>
 	</body>
 </html>
