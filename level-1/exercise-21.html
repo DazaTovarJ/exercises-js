@@ -16,7 +16,13 @@
 			 */
 			const elevateMembers = (array = []) => {
 				if (!array || array.length === 0) {
-					return [];
+					return null;
+				}
+
+				for (const num of array) {
+					if (typeof num !== "number" || isNaN(num)) {
+						return null;
+					}
 				}
 
 				const newArray = new Array(array.length);
@@ -41,9 +47,13 @@
 
 				let poweredArray = elevateMembers(array);
 
-				if (poweredArray.length > 0) {
+				if (poweredArray !== null) {
 					alert(
 						`${array.toLocaleString()} elevados al cuadrado son ${poweredArray.toLocaleString()} respectivamente`,
+					);
+				} else {
+					alert(
+						"Se ingresó un miembro en el arreglo que no es un número",
 					);
 				}
 			} else {

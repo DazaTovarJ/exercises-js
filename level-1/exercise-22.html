@@ -16,7 +16,13 @@
 			 */
 			const getLowHighValues = (array = []) => {
 				if (!array || array.length === 0) {
-					return [];
+					return null;
+				}
+
+				for (const num of array) {
+					if (typeof num !== "number" || isNaN(num)) {
+						return null;
+					}
 				}
 
 				let maximum = 0,
