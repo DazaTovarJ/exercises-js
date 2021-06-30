@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 24</title>
+	</head>
+	<body>
+		<h1>Ejercicio 24</h1>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<p><a href="arrays.html">Volver atrás</a></p>
+		<script>
+			/**
+			 * Returns an object with an array of numbers sorted in ascending order and an array of numbers sorted in descending order, both from a given array
+			 */
+			const sortArray = (array = []) => {
+				if (!array || array.length === 0) {
+					return null;
+				}
+
+				for (const num of array) {
+					if (typeof num !== "number" || isNaN(num)) {
+						return null;
+					}
+				}
+
+				const asc = array.map((num) => num).sort(),
+					desc = array
+						.map((num) => num)
+						.sort()
+						.reverse();
+
+				return { asc, desc };
+			};
+
+			let members = Number.parseInt(
+				prompt("¿Cuántos números deseas ingresar?"),
+			);
+			if (!isNaN(members) && members > 0) {
+				const array = new Array(members);
+				for (let i = 0; i < members; i++) {
+					array[i] = Number.parseInt(
+						prompt(`Ingresa el ${i + 1}° número`),
+					);
+				}
+
+				let sortedArray = sortArray(array);
+
+				if (sortedArray !== null) {
+					let { asc, desc } = sortedArray;
+					alert(
+						`El array ordenado en forma ascendente es ${asc} y en forma descendente es ${desc}`,
+					);
+				}
+			} else {
+				alert(
+					"No se ha ingresado un array o un número válido de miembros",
+				);
+			}
+		</script>
+	</body>
+</html>

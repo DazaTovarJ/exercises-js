@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 26</title>
+	</head>
+	<body>
+		<h1>Ejercicio 26</h1>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<p><a href="arrays.html">Volver atrás</a></p>
+		<script>
+			/**
+			 * Returns the average of a list of numbers
+			 */
+			const getAverage = (array = []) => {
+				if (!array || array.length === 0) {
+					return null;
+				}
+
+				for (const num of array) {
+					if (typeof num !== "number" || isNaN(num)) {
+						return null;
+					}
+				}
+
+				let summatory = 0;
+				for (const xi of array) {
+					summatory += xi;
+				}
+
+				return summatory / array.length;
+			};
+
+			let members = Number.parseInt(
+				prompt("¿Cuántos números deseas ingresar?"),
+			);
+			if (!isNaN(members) && members > 0) {
+				const array = new Array(members);
+				for (let i = 0; i < members; i++) {
+					array[i] = Number.parseInt(
+						prompt(`Ingresa el ${i + 1}° número`),
+					);
+				}
+
+				let average = getAverage(array);
+
+				if (average !== null) {
+					alert(`El promedio de todos los números es ${average}`);
+				}
+			} else {
+				alert(
+					"No se ha ingresado un array o un número válido de miembros",
+				);
+			}
+		</script>
+	</body>
+</html>

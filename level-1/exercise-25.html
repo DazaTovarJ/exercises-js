@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 24</title>
+	</head>
+	<body>
+		<h1>Ejercicio 24</h1>
+		<p><a href="../index.html">Volver al inicio</a></p>
+		<p><a href="arrays.html">Volver atrás</a></p>
+		<script>
+			/**
+			 * Deletes duplicated elements in a given array
+			 */
+			const deleteDuplicated = (array = []) => {
+				if (!array || array.length <= 1) {
+					return null;
+				}
+
+				return {
+					original: array,
+					noDuplicates: array.filter(
+						(value, index, self) => self.indexOf(value) === index,
+					),
+				};
+			};
+
+			let members = Number.parseInt(
+				prompt("¿Cuántos elementos deseas ingresar?"),
+			);
+			if (!isNaN(members) && members > 0) {
+				const array = new Array(members);
+				for (let i = 0; i < members; i++) {
+					array[i] = prompt(`Ingresa el ${i + 1}° elemento`);
+				}
+
+				let filteredArray = deleteDuplicated(array);
+
+				if (filteredArray !== null) {
+					let { original, noDuplicates } = filteredArray;
+					alert(
+						`Eliminando los duplicados, el arreglo queda así: ${noDuplicates}`,
+					);
+				}
+			} else {
+				alert(
+					"No se ha ingresado un array o un número válido de miembros",
+				);
+			}
+		</script>
+	</body>
+</html>
